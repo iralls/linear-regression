@@ -41,7 +41,7 @@ class GradientDescent(object):
     training_data must be in form [[x1, y1], [x2, y2]]
     """
 
-    def __init__(self, training_data, init_m=0, init_b=0, learning_rate=0.005, max_iterations=5000, max_cost_diff=0.005):
+    def __init__(self, training_data, init_m=0, init_b=0, learning_rate=0.001, max_iterations=5000, max_cost_diff=0.005):
         self.training_data = training_data
 
         # initial value for m in y = m*x + b

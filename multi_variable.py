@@ -15,7 +15,7 @@ class GradientDescent(object):
         init_parameters: must be in the form [p1,p2,...,pn]
     """
 
-    def __init__(self, training_data, init_parameters=[], learning_rate=0.005, max_iterations=5000, max_cost_diff=0.005):
+    def __init__(self, training_data, init_parameters=[], learning_rate=0.001, max_iterations=5000, max_cost_diff=0.005):
 
         # theta0 is treated as 1 for use in equations
         self.x = [[1] + i[:-1] for i in training_data]
