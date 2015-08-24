@@ -42,11 +42,11 @@ print l.get_formula()
 training_data = [[1,2,3], [4,4,6], [7,6,10], [8,7,12], [9,7,14]]
 l = GradientDescent(training_data)
 l.calculate()
-l.get_formula()
+print l.get_formula()
 0.146*x0 + 1.0121*x1 + 0.5604*x2 (x0 = 1)
 
 l = GradientDescent(training_data, [0,.5,1])
 l.calculate()
-l.get_formula()
+print l.get_formula()
 0.0127*x0 + 0.6099*x1 + 1.0533*x2 (x0 = 1)
 ```

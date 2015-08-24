@@ -95,4 +95,4 @@ class GradientDescent(object):
     def get_formula(self):
         """ return the formula after running gradient descent """
 
-        print " + ".join(["{0}*x{1}".format(round(v, 4), k) for k,v in enumerate(self.final_parameters)]) + " (x0 = 1)"
+        return " + ".join(["{0}*x{1}".format(round(v, 4), k) for k,v in enumerate(self.final_parameters)]) + " (x0 = 1)"
