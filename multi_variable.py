@@ -91,7 +91,7 @@ class GradientDescent(object):
                 break
             # if the cost increases, attempt to lower the learning
             # rate in the effort of avoiding a never-converging gradient descent
-            elif tmp_cost > last_cost:
+            elif tmp_cost > last_cost and count > 1000:
                 self.learning_rate = self.learning_rate * 0.5
             else:
                 last_cost = tmp_cost

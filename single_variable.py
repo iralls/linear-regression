@@ -61,7 +61,7 @@ class GradientDescent(object):
     def hypothesis(self, m, x, b):
         """ calculate hypothesis function """
 
-        return m * x + b
+        return (m * x) + b
 
     def cost(self, m, b):
         """ calculate the cost function for values of m and b """
@@ -86,11 +86,14 @@ class GradientDescent(object):
             tmp_m = 0
 
             for i in self.training_data:
-                tmp_b += self.hypothesis(m, i[0], b) - i[1]
-                tmp_m += (self.hypothesis(m, i[0], b) - i[1]) * i[0]
+                x = i[0]
+                y = i[1]
+                size = len(self.training_data)
+                tmp_b += self.hypothesis(m, x, b) - y
+                tmp_m += (self.hypothesis(m, x, b) - y) * x
 
-            b -= (self.learning_rate * tmp_b) / len(self.training_data)
-            m -= (self.learning_rate * tmp_m) / len(self.training_data)
+            b -= (self.learning_rate * tmp_b) / size
+            m -= (self.learning_rate * tmp_m) / size
 
             count += 1
             tmp_cost = self.cost(m, b)
@@ -101,7 +104,7 @@ class GradientDescent(object):
                 break
             # if the cost increases, attempt to lower the learning
             # rate in the effort of avoiding a never-converging gradient descent
-            elif tmp_cost > last_cost:
+            elif tmp_cost > last_cost and count > 1000:
                 self.learning_rate = self.learning_rate * 0.5
             else:
                 last_cost = tmp_cost
