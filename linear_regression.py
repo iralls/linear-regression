@@ -125,8 +125,6 @@ class MultiVariateGradientDescent(object):
 
     @params:
         training_data: must be in form [[x1.1,x1.2,...,x1.n,y1], [x2.1,x2.2..,x2.n,y2]]
-        ***NOTE - the FIRST parameter in each training set will be considered theta0
-        meaning it is the 'y-intercept' of the equation
         ***NOTE - the LAST parameter in each training set will be considered y
 
         init_parameters: must be in the form [p1,p2,...,pn]
